@@ -1,0 +1,23 @@
+# Maintainer: JZ Design Solutions <dev@jzds.me>
+# Contributor: P223 — Policía de IAs (Auditor de IA Local)
+# Instalación: paru -S p223   (o  yay -S p223)  desde un AUR local/remoto.
+
+pkgname=p223
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="P223 - Policia de IAs: auditoria local de entornos de IA (PII, secretos, trafico saliente)"
+arch=('any')
+url="https://jz507design.github.io/p223/"
+license=('custom:Proprietary')
+depends=('python>=3.11' 'python-setuptools')
+makedepends=('python-wheel')
+source=("auditor_ia_local-${pkgver}-py3-none-any.whl::https://jz507design.github.io/p223/download/auditor_ia_local-${pkgver}-py3-none-any.whl")
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}"
+    python -m pip install \
+        --no-deps \
+        --prefix "${pkgdir}/usr" \
+        "auditor_ia_local-${pkgver}-py3-none-any.whl"
+}

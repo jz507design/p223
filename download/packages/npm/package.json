@@ -1,0 +1,27 @@
+{
+  "name": "p223-ia",
+  "version": "0.1.0",
+  "description": "P223 — Policía de IAs: auditoría local de entornos de IA (detecta fugas, secretos y tráfico). Instala el CLI oficial mediante bootstrap.",
+  "keywords": ["ai", "auditor", "seguridad", "pii", "ia-local", "p223"],
+  "license": "Proprietary",
+  "author": "JZ Design Solutions <dev@jzds.me> (https://jzds.me)",
+  "homepage": "https://jz507design.github.io/p223/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jz507design/p223.git"
+  },
+  "bin": {
+    "p223": "bin/p223.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "scripts": {
+    "install": "node bin/postinstall.js",
+    "postinstall": "node bin/postinstall.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "os": ["linux", "darwin", "win32"]
+}
