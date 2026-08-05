@@ -61,19 +61,46 @@
     faders.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- Formulario ---------- */
+  /* ---------- Formulario (FormSubmit AJAX) ---------- */
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', function (ev) {
+    form.addEventListener('submit', async function (ev) {
       ev.preventDefault();
       const note = document.getElementById('formNote');
       const lang = document.documentElement.lang || 'es';
-      note.textContent = (lang === 'zh')
+      const ok = (lang === 'zh')
         ? '✓ 已收到消息，我们会尽快联系你。'
         : (lang === 'en'
           ? '✓ Message received. We will get back to you shortly.'
           : '✓ Mensaje recibido. Te contactamos pronto.');
-      form.reset();
+      const fail = (lang === 'zh')
+        ? '✗ 发送失败，请重试。'
+        : (lang === 'en'
+          ? '✗ Could not send. Please try again.'
+          : '✗ No se pudo enviar. Intenta de nuevo.');
+
+      const data = new FormData(form);
+      data.append('_ajax', 'true');
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        const body = await res.json().catch(() => null);
+        if (res.ok && body && body.success === 'true') {
+          note.textContent = ok;
+          note.style.color = 'var(--verde)';
+          form.reset();
+        } else {
+          note.textContent = fail;
+          note.style.color = 'var(--rojo)';
+        }
+      } catch (e) {
+        note.textContent = fail;
+        note.style.color = 'var(--rojo)';
+      }
     });
   }
 })();
