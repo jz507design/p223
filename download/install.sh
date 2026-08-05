@@ -73,7 +73,7 @@ else
 fi
 
 # ---------- 5. bajar el wheel ----------
-tmp_wheel="$(mktemp -t p223.XXXX).whl"
+tmp_wheel="${TMPDIR:-/tmp}/p223-$P223_VERSION-py3-none-any.whl"
 ok "Descargando paquete..."
 curl -fsSL --retry 3 "$P223_URL" -o "$tmp_wheel" || die "Fallo al descargar $P223_URL"
 
