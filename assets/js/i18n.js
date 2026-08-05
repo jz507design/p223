@@ -81,7 +81,31 @@ const I18N = {
     don_b: "Comprar un café",
 
     footer_line: "Policía de IAs — por JZ Design Solutions",
-    footer_moto: "El prudente ve el peligro y se protege."
+    footer_moto: "El prudente ve el peligro y se protege.",
+
+    donar_t: "Apoya a P223",
+    donar_sub: "Tu aporte mantiene el escáner gratis y en desarrollo.",
+    donar_metodos: "Métodos de pago",
+    donar_elige: "Elige el canal que más te convenga. Gracias por sumar.",
+    donar_binance_t: "Donar con Binance",
+    donar_binance_d: "Escanea el QR con la app de Binance o usa el botón directo.",
+    donar_binance_btn: "Donar con Binance Pay",
+    donar_paypal_t: "Donar con PayPal",
+    donar_paypal_d: "Usa PayPal.Me o escríbenos para coordinar.",
+    donar_paypal_btn: "Donar con PayPal",
+    donar_airtm_t: "Donar con Airtm",
+    donar_airtm_d: "Escanea el QR o abre el link de pago Airtm.",
+    donar_airtm_btn: "Donar con Airtm",
+    donar_uso: "¿Cómo se usan las donaciones?",
+    donar_uso_t: "Tu aporte, bien usado",
+    donar_uso1: "Mantenimiento del proyecto y la landing",
+    donar_uso2: "Mejoras en detectores y modelo local",
+    donar_uso3: "Documentación y soporte a la comunidad",
+    donar_partner_t: "¿Interesado en una asociación?",
+    donar_partner_d: "Envíanos una propuesta de sociedad o negocio.",
+    donar_partner_btn: "Enviar propuesta",
+    donar_volver: "← Volver a la landing",
+    donar_pregunta: "¿Preguntas? Escríbenos"
   },
 
   en: {
@@ -162,7 +186,31 @@ const I18N = {
     don_b: "Buy a coffee",
 
     footer_line: "The AI Police — by JZ Design Solutions",
-    footer_moto: "The prudent see danger and take cover."
+    footer_moto: "The prudent see danger and take cover.",
+
+    donar_t: "Support P223",
+    donar_sub: "Your contribution keeps the scanner free and evolving.",
+    donar_metodos: "Payment methods",
+    donar_elige: "Pick the channel that works best for you. Thanks for chipping in.",
+    donar_binance_t: "Donate with Binance",
+    donar_binance_d: "Scan the QR with the Binance app or use the direct button.",
+    donar_binance_btn: "Donate via Binance Pay",
+    donar_paypal_t: "Donate with PayPal",
+    donar_paypal_d: "Use PayPal.Me or write to us to coordinate.",
+    donar_paypal_btn: "Donate via PayPal",
+    donar_airtm_t: "Donate with Airtm",
+    donar_airtm_d: "Scan the QR or open the Airtm payment link.",
+    donar_airtm_btn: "Donate via Airtm",
+    donar_uso: "How are donations used?",
+    donar_uso_t: "Your support, well spent",
+    donar_uso1: "Maintaining the project and the landing site",
+    donar_uso2: "Improving detectors and the local model",
+    donar_uso3: "Documentation and community support",
+    donar_partner_t: "Interested in a partnership?",
+    donar_partner_d: "Send us a business or partnership proposal.",
+    donar_partner_btn: "Send proposal",
+    donar_volver: "← Back to the landing",
+    donar_pregunta: "Questions? Write to us"
   },
 
   zh: {
@@ -243,7 +291,31 @@ const I18N = {
     don_b: "请喝咖啡",
 
     footer_line: "AI 警察 — 来自 JZ Design Solutions",
-    footer_moto: "智慧者看见危险，便设法躲避。"
+    footer_moto: "智慧者看见危险，便设法躲避。",
+
+    donar_t: "支持 P223",
+    donar_sub: "你的贡献让扫描器保持免费并持续进步。",
+    donar_metodos: "支付方式",
+    donar_elige: "选择最方便的方式。感谢你的支持。",
+    donar_binance_t: "用 Binance 捐赠",
+    donar_binance_d: "用 Binance 应用扫描二维码，或使用直接按钮。",
+    donar_binance_btn: "通过 Binance Pay 捐赠",
+    donar_paypal_t: "用 PayPal 捐赠",
+    donar_paypal_d: "使用 PayPal.Me 或写信给我们协调。",
+    donar_paypal_btn: "通过 PayPal 捐赠",
+    donar_airtm_t: "用 Airtm 捐赠",
+    donar_airtm_d: "扫描二维码或打开 Airtm 支付链接。",
+    donar_airtm_btn: "通过 Airtm 捐赠",
+    donar_uso: "捐赠用于何处？",
+    donar_uso_t: "你的支持用在了刀刃上",
+    donar_uso1: "维护项目和着陆页",
+    donar_uso2: "改进检测器与本地模型",
+    donar_uso3: "文档与社区支持",
+    donar_partner_t: "想合作？",
+    donar_partner_d: "向我们发送商业或合作提案。",
+    donar_partner_btn: "发送提案",
+    donar_volver: "← 返回着陆页",
+    donar_pregunta: "有问题？写给我们"
   }
 };
 

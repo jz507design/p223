@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donar — P223 · Policía de IAs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/donar.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">P223</span>
+      <span class="brand-sub" data-i18n="nav_sub">Policía de IAs</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html#como" data-i18n="nav_como">Cómo</a>
+      <a href="index.html#filosofia" data-i18n="nav_filosofia">Filosofía</a>
+      <a href="index.html#precios" data-i18n="nav_precios">Precios</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Idioma">
+        <button class="lang-btn is-active" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="btn btn-ghost" href="index.html" data-i18n="donar_volver">← Volver</a>
+    </div>
+  </div>
+</header>
+
+<section class="don-hero">
+  <div class="container">
+    <p class="kicker" data-i18n="donar_metodos">Métodos de pago</p>
+    <h1 class="don-title" data-i18n="donar_t">Apoya a P223</h1>
+    <p class="don-sub" data-i18n="donar_sub">Tu aporte mantiene el escáner gratis y en desarrollo.</p>
+    <p class="don-verso mono">"El prudente ve el peligro y se protege." — Pr 22:3</p>
+  </div>
+</section>
+
+<section class="section payment">
+  <div class="container">
+    <p class="kicker" data-i18n="donar_elige">Elige el canal que más te convenga.</p>
+    <div class="pay-grid">
+      <!-- Binance -->
+      <article class="pay-card">
+        <div class="pay-head">
+          <div class="pay-icon crypto">₿</div>
+          <h2 data-i18n="donar_binance_t">Donar con Binance</h2>
+        </div>
+        <div class="pay-qr"><img src="assets/img/donar/binance_qr.png" alt="Binance QR"></div>
+        <p class="pay-d" data-i18n="donar_binance_d">Escanea el QR con la app de Binance o usa el botón directo.</p>
+        <!-- REEMPLAZAR href por tu enlace de Binance Pay -->
+        <a class="btn btn-gold" href="#" data-i18n="donar_binance_btn">Donar con Binance Pay</a>
+      </article>
+
+      <!-- PayPal -->
+      <article class="pay-card">
+        <div class="pay-head">
+          <div class="pay-icon">P</div>
+          <h2 data-i18n="donar_paypal_t">Donar con PayPal</h2>
+        </div>
+        <div class="pay-paypal">
+          <span class="pp-shield">P</span>
+          <span class="pp-txt">PayPal.Me</span>
+        </div>
+        <p class="pay-d" data-i18n="donar_paypal_d">Usa PayPal.Me o escríbenos para coordinar.</p>
+        <!-- REEMPLAZAR: href=https://paypal.me/TUUSUARIO -->
+        <a class="btn btn-outline" href="#" data-i18n="donar_paypal_btn">Donar con PayPal</a>
+      </article>
+
+      <!-- Airtm -->
+      <article class="pay-card">
+        <div class="pay-head">
+          <div class="pay-icon">A</div>
+          <h2 data-i18n="donar_airtm_t">Donar con Airtm</h2>
+        </div>
+        <div class="pay-qr"><img src="assets/img/donar/airtm_qr.png" alt="Airtm QR"></div>
+        <p class="pay-d" data-i18n="donar_airtm_d">Escanea el QR o abre el link de pago Airtm.</p>
+        <!-- REEMPLAZAR href por tu link de pago Airtm -->
+        <a class="btn btn-outline" href="#" data-i18n="donar_airtm_btn">Donar con Airtm</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section don-uso">
+  <div class="container">
+    <p class="kicker" data-i18n="donar_uso_t">Tu aporte, bien usado</p>
+    <h2 class="section-title" data-i18n="donar_uso">¿Cómo se usan las donaciones?</h2>
+    <div class="uso-list">
+      <div class="uso-item" data-i18n="donar_uso1">Mantenimiento del proyecto y la landing</div>
+      <div class="uso-item" data-i18n="donar_uso2">Mejoras en detectores y modelo local</div>
+      <div class="uso-item" data-i18n="donar_uso3">Documentación y soporte a la comunidad</div>
+    </div>
+
+    <div class="partner-box">
+      <h3 data-i18n="donar_partner_t">¿Interesado en una asociación?</h3>
+      <p data-i18n="donar_partner_d">Envíanos una propuesta de sociedad o negocio.</p>
+      <a class="btn btn-outline" href="mailto:business@jzds.me?subject=Propuesta de Asociación" data-i18n="donar_partner_btn">Enviar propuesta</a>
+    </div>
+
+    <p class="don-pregunta mono" data-i18n="donar_pregunta">¿Preguntas? Escríbenos → dev@jzds.me</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-badge">P223</span>
+      <span data-i18n="footer_line">Policía de IAs — por JZ Design Solutions</span>
+    </div>
+    <p class="footer-moto mono" data-i18n="footer_moto">El prudente ve el peligro y se protege.</p>
+    <a class="footer-link" href="https://jzds.me/" target="_blank" rel="noopener">jzds.me</a>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
