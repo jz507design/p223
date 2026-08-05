@@ -280,7 +280,29 @@ body {
 .fade.in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
+/* ---------- Instalación (líneas de comando) ---------- */
+.install-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 48px; }
+.install-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px; display: flex; flex-direction: column; gap: 10px;
+}
+.install-card:hover { border-color: var(--gold); }
+.install-tag {
+  font: 600 .72rem 'JetBrains Mono', monospace; color: var(--gold);
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.install-desc { color: var(--muted); font-size: .86rem; }
+.install-cmd {
+  background: var(--bg-2); border: 1px solid var(--border-2); border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--gold-2);
+  padding: 12px 14px; overflow-x: auto; line-height: 1.7; white-space: pre;
+  user-select: all;
+}
+.install-cmd .dollar { color: var(--verde); user-select: none; }
+.install-note { color: var(--muted); font-size: .74rem; }
+
 @media (max-width: 900px) {
+  .install-grid { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero { padding: 64px 0; }
   .cards { grid-template-columns: repeat(2, 1fr); }
