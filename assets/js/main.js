@@ -143,4 +143,13 @@
     el.setAttribute('tabindex', '0');
     el.classList.add('is-zoomable');
   });
+
+  // Botones de canal sin link directo todavía: abren el QR en grande
+  // (p. ej. Binance Pay / Yappy) hasta que se disponga del enlace oficial.
+  document.querySelectorAll('[data-lightbox-src]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      openLightbox(el.getAttribute('data-lightbox-src'));
+    });
+  });
 })();
