@@ -59,11 +59,18 @@ printf '\n  Instalando %sP223 v%s%s en %s\n\n' "$c_hl" "$P223_VERSION" "$c_reset
 mkdir -p "$INSTALL_DIR"
 
 # ---------- 4. crear venv ----------
-if [[ ! -x "$VENV_DIR/bin/python" ]]; then
+if [[ ! -x "$VENV_DIR/bin/python" && ! -x "$VENV_DIR/Scripts/python.exe" ]]; then
   ok "Creando entorno virtual..."
   "$PY" -m venv "$VENV_DIR" >/dev/null
 fi
-VENV_PY="$VENV_DIR/bin/python"
+# Detectar el intérprete del venv (Linux/macOS usa bin/, Git Bash/Windows usa Scripts/)
+if [[ -x "$VENV_DIR/bin/python" ]]; then
+  VENV_PY="$VENV_DIR/bin/python"
+  VENV_BIN="$VENV_DIR/bin"
+else
+  VENV_PY="$VENV_DIR/Scripts/python.exe"
+  VENV_BIN="$VENV_DIR/Scripts"
+fi
 
 # ---------- 5. bajar el wheel ----------
 tmp_wheel="$(mktemp -t p223.XXXX).whl"
@@ -77,17 +84,21 @@ ok "Instalando dependencias (la primera vez puede tardar)..."
 rm -f "$tmp_wheel"
 
 # ---------- 7. enlazar p223 en el PATH ----------
-P223_BIN="$VENV_DIR/bin/p223"
-if [[ ! -x "$P223_BIN" ]]; then
-  # p223 se genera como console-script en el venv; si no está, fallback:
-  P223_BIN="$VENV_DIR/bin/python"
+# console-script del venv (p223) según plataforma
+if [[ -x "$VENV_BIN/p223" ]]; then
+  P223_BIN="$VENV_BIN/p223"
+elif [[ -x "$VENV_BIN/p223.exe" ]]; then
+  P223_BIN="$VENV_BIN/p223.exe"
+else
+  P223_BIN="$VENV_PY"
 fi
 
 BIN_DIR="$HOME/.local/bin"
 mkdir -p "$BIN_DIR"
 
-# enlace simbólico (Linux/macOS)
+# enlace simbólico / wrapper (según lo que soporte la plataforma)
 ln -sf "$P223_BIN" "$BIN_DIR/p223" 2>/dev/null || {
+  # en entornos que no permiten symlink (Git Bash) usamos un wrapper sh
   printf '#!/usr/bin/env sh\nexec "%s" "$@"\n' "$P223_BIN" > "$BIN_DIR/p223"
   chmod +x "$BIN_DIR/p223"
 }
