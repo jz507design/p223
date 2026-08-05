@@ -104,4 +104,43 @@
       }
     });
   }
+
+  /* ---------- Lightbox para QRs (imagen grande) ---------- */
+  // Las capturas de QR contienen el código + elementos alrededor, así que al
+  // hacer clic se abre la imagen en grande ocupando ~90% de la altura, como
+  // hace RutaPTY con sus secciones de donación.
+  function openLightbox(src) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+
+    const close = document.createElement('button');
+    close.className = 'lightbox-close';
+    close.setAttribute('aria-label', 'Cerrar');
+    close.textContent = '✕';
+
+    overlay.appendChild(img);
+    overlay.appendChild(close);
+    document.body.appendChild(overlay);
+
+    function dismiss() { overlay.remove(); }
+    close.addEventListener('click', function (e) { e.stopPropagation(); dismiss(); });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) dismiss();
+    });
+  }
+
+  document.querySelectorAll('.qr-zoom').forEach(function (el) {
+    el.addEventListener('click', function () {
+      openLightbox(el.getAttribute('src'));
+    });
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.classList.add('is-zoomable');
+  });
 })();

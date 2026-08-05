@@ -35,6 +35,7 @@
 .pay-qr { background: #fff; padding: 12px; border-radius: 12px; margin-bottom: 18px; }
 .pay-qr img { width: 150px; height: 150px; display: block; }
 .pay-d { color: var(--muted); font-size: .9rem; margin-bottom: 22px; }
+.pay-hint { color: var(--gold); font-size: .78rem; letter-spacing: .02em; margin: -12px 0 18px; font-family: 'JetBrains Mono', monospace; }
 .pay-card .btn { width: 100%; justify-content: center; margin-top: auto; }
 
 /* PayPal (sin QR, logo textual) */
@@ -59,6 +60,34 @@
 .uso-item { padding: 18px 20px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
 .uso-item::before { content: '✓'; display: inline-block; margin-right: 12px; color: var(--gold); font-weight: 700; }
 .don-pregunta { text-align: center; color: var(--gold); margin-top: 48px; font-size: .9rem; }
+
+/* ---------- Lightbox (QR en grande) ---------- */
+.qr-zoom { cursor: zoom-in; transition: transform .15s; }
+.qr-zoom.is-zoomable:hover { transform: scale(1.04); }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0, 0, 0, .92);
+  display: flex; align-items: center; justify-content: center;
+  padding: 4vh 3vw;
+  cursor: zoom-out;
+}
+.lightbox img {
+  max-width: 94vw;
+  max-height: 90vh;      /* ocupa casi toda la altura del navegador */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.lightbox-close {
+  position: absolute; top: 18px; right: 22px;
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.35);
+  width: 42px; height: 42px; border-radius: 50%;
+  font-size: 1.1rem; cursor: pointer; z-index: 2;
+}
+.lightbox-close:hover { background: rgba(255,255,255,.12); }
 
 /* Responsive */
 @media (max-width: 900px) {
