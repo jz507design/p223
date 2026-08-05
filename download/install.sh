@@ -73,15 +73,17 @@ else
 fi
 
 # ---------- 5. bajar el wheel ----------
-tmp_wheel="${TMPDIR:-/tmp}/p223-$P223_VERSION-py3-none-any.whl"
+dl_dir="${TMPDIR:-/tmp}/p223-install.$$"
+mkdir -p "$dl_dir"
+trap 'rm -rf "$dl_dir"' EXIT
+wheel_path="$dl_dir/$P223_WHEEL"
 ok "Descargando paquete..."
-curl -fsSL --retry 3 "$P223_URL" -o "$tmp_wheel" || die "Fallo al descargar $P223_URL"
+curl -fsSL --retry 3 "$P223_URL" -o "$wheel_path" || die "Fallo al descargar $P223_URL"
 
 # ---------- 6. instalar ----------
 ok "Instalando dependencias (la primera vez puede tardar)..."
 "$VENV_PY" -m pip install --quiet --upgrade pip 2>/dev/null || true
-"$VENV_PY" -m pip install --quiet "$tmp_wheel" || die "Fallo al instalar el paquete."
-rm -f "$tmp_wheel"
+"$VENV_PY" -m pip install --quiet "$wheel_path" || die "Fallo al instalar el paquete."
 
 # ---------- 7. enlazar p223 en el PATH ----------
 # console-script del venv (p223) según plataforma
