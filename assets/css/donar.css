@@ -19,7 +19,7 @@
 
 /* Métodos de pago */
 .payment { padding-top: 60px; }
-.pay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 34px; align-items: stretch; }
+.pay-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 34px; align-items: stretch; }
 .pay-card {
   background: var(--panel); border: 1px solid var(--border); border-radius: 18px;
   padding: 30px 26px; display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -62,5 +62,8 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .pay-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
   .pay-grid { grid-template-columns: 1fr; }
 }
