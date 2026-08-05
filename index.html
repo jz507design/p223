@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P223 — El prudente ve el peligro y se protege</title>
+<meta name="description" content="P223 audita tus entornos de IA local: detecta fugas de datos, secretos expuestos y riesgos antes de que se conviertan en una brecha. 100% local, sin fuga de datos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<!--
+THESIS: P223 vende una sola idea — "ves el peligro antes de que ocurra". Refunda el
+patrón por defecto de estadio de producto de seguridad ("dashboard de métricas en hero").
+OWN-WORLD: carbón noche #08090c, oro vigilante #e8b86d, tonos de hallazgos estilo semáforo de
+consola (verde/ámbar/rojo), tipografía Space Grotesk (display) + JetBrains Mono (datos);
+texturas de escaneo con línea de retícula y lente de rayos X sobre un reporte real.
+STORY: el visitante entiende que su IA local pierde datos sin saberlo, cree que un escáner
+local puede mostrárselo en segundos, y siente el impulso de probarlo gratis.
+FIRST VIEWPORT: "Proverbios 22:3" como lema; hero de punta a punta con el versículo en letra
+display amarillo oro, subtexto, doble CTA (Probar ahora / Ver demo), y a la derecha el
+reporte real de P223 como prueba, sobre fondo carbón con retícula. El versículo es el ancla
+de marca que todo lo muestra.
+FORM: nueva landing page Persuade, camino directo, seed key P223-LAND.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review,
+the verdict, and DESIGN.md.
+-->
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner container">
+    <a class="brand" href="#top">
+      <span class="brand-badge">P223</span>
+      <span class="brand-sub" data-i18n="nav_sub">Policía de IAs</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#como" data-i18n="nav_como">Cómo</a>
+      <a href="#filosofia" data-i18n="nav_filosofia">Filosofía</a>
+      <a href="#precios" data-i18n="nav_precios">Precios</a>
+      <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Idioma">
+        <button class="lang-btn is-active" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="btn btn-ghost" href="#demo" data-i18n="nav_demo">Ver demo</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="scanline"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker" data-i18n="hero_kicker">Auditoría de IA local · sin fuga de datos</p>
+      <h1 class="hero-title">
+        <span data-i18n="hero_t1">El prudente ve</span>
+        <span class="hero-em" data-i18n="hero_t2">el peligro</span>
+        <span data-i18n="hero_t3">y se protege.</span>
+      </h1>
+      <p class="hero-sub mono" data-i18n="hero_sub">Proverbios 22:3</p>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Tus modelos de IA manejan datos que no pueden darse el lujo de perder.
+        P223 escanea tu máquina, detecta secretos expuestos, PII y tráfico saliente,
+        y te da un veredicto claro — todo local, ejecutado en tu equipo.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#demo" data-i18n="hero_cta1">Probar ahora</a>
+        <a class="btn btn-outline" href="#como" data-i18n="hero_cta2">Ver cómo funciona</a>
+      </div>
+      <div class="hero-proof mono">
+        <div class="proof-item"><span class="dot" style="--c:var(--verde)"></span> 100% LOCAL</div>
+        <div class="proof-item"><span class="dot" style="--c:var(--rojo)"></span> TRAFFIC GUARD</div>
+        <div class="proof-item"><span class="dot" style="--c:var(--verde)"></span> PII</div>
+        <div class="proof-item"><span class="dot" style="--c:var(--verde)"></span> REPORTE</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="turret">
+        <div class="turret-head">
+          <span class="led r"></span><span class="led g"></span>
+          <span class="turret-title mono">P223 · scan report</span>
+        </div>
+        <pre class="turret-code mono">
+  PROCESOS IA      3        llama / python
+  PUERTOS          1        11434/TCP
+  SECRETOS         1        aws_acct=AKIA...
+  PERMISOS         2        ~/Documents · .ssh
+  TRAFFIC OUT      0        verificado
+  veredicto   →  <span class="crit">RIESGO ALTO</span>
+        </pre>
+        <div class="turret-panel">
+          <div class="turret-row"><span>Procesos IA</span><b class="n">3</b></div>
+          <div class="turret-row"><span>Riesgo global</span><b class="crito">ALTO</b></div>
+          <div class="turret-bar"><span style="width:78%"></span></div>
+        </div>
+        <div class="turret-caption mono">Reporte real · scan 2026-08-05</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO ============ -->
+<section class="section" id="como">
+  <div class="container">
+    <p class="kicker" data-i18n="como_kicker">Un escáner de confianza</p>
+    <h2 class="section-title" data-i18n="como_t">Audita tu máquina. No tus datos.</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon mono">ESC</div>
+        <h3 data-i18n="f1_t">Escaneo del entorno</h3>
+        <p class="card-txt" data-i18n="f1_d">Procesos de IA en ejecución, puertos abiertos,
+        claves y permisos de carpetas sensibles.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon mono">OUT</div>
+        <h3 data-i18n="f2_t">Intercepta el tráfico saliente</h3>
+        <p class="card-txt" data-i18n="f2_d">Detecta si tus modelos envían datos a terceros
+        sin permiso vía un proxy interceptor.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon mono">PII</div>
+        <h3 data-i18n="f3_t">PII y secretos</h3>
+        <p class="card-txt" data-i18n="f3_d">Encuentra y anonimiza datos personales y credenciales
+        con Presidio y heurísticas locales.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon mono">IA</div>
+        <h3 data-i18n="f4_t">Veredicto con modelo local</h3>
+        <p class="card-txt" data-i18n="f4_d">Un modelo local (Ollama) resume el riesgo y da
+        recomendaciones en lenguaje claro.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILOSOFÍA ============ -->
+<section class="filosofia" id="filosofia">
+  <div class="container filosofia-inner">
+    <div class="verso">
+      <p class="kicker" data-i18n="filosofia_kicker">Nuestra filosofía</p>
+      <div class="verso-text">
+        <span data-i18n="v1">El prudente ve el peligro</span>
+        <span class="it" data-i18n="v2">y se protege;</span>
+        <span data-i18n="v3">el inexperto sigue adelante</span>
+        <span class="em" data-i18n="v4">y recibe el daño.</span>
+      </div>
+      <p class="verso-ref mono">Proverbios 22:3</p>
+      <p class="verso-expl" data-i18n="filosofia_d">
+        P223 es nuestra traducción al producto de esa verdad: vemos antes, para que no
+        pagues el daño de no haber vigilado.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMO ============ -->
+<section class="section demo" id="demo">
+  <div class="container">
+    <p class="kicker" data-i18n="demo_kicker">Prueba real</p>
+    <h2 class="section-title" data-i18n="demo_title">Así luce en acción</h2>
+    <div class="demo-grid">
+      <figure class="demo-card">
+        <div class="demo-screen"><img src="assets/img/demo/dashboard.png" alt="Panel P223"></div>
+        <figcaption class="mono" data-i18n="demo_c1">Panel con KPIs y última auditoría</figcaption>
+      </figure>
+      <figure class="demo-card">
+        <div class="demo-screen"><img src="assets/img/demo/detalle.png" alt="Detalle de auditoría"></div>
+        <figcaption class="mono" data-i18n="demo_c2">Hallazgos con veredicto y detalle</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRECIOS ============ -->
+<section class="section" id="precios">
+  <div class="container">
+    <p class="kicker" data-i18n="price_k">Precios</p>
+    <h2 class="section-title" data-i18n="price_t">Empieza hoy, paga por lo que vale la pena</h2>
+    <div class="pricing">
+      <div class="plan">
+        <h3 data-i18n="p1_t">P223 Inspector</h3>
+        <p class="plan-txt" data-i18n="p1_d">Auto-auditoría de tu máquina<br>con reporte PDF/HTML</p>
+        <div class="price"><span class="mono">$0</span><div class="price-note" data-i18n="p1_n">demo · tu propia máquina</div></div>
+        <ul class="plan-list">
+          <li data-i18n="p1_l1">Escaneo completo</li>
+          <li data-i18n="p1_l2">PII y secretos</li>
+          <li data-i18n="p1_l3">Reporte PDF</li>
+        </ul>
+        <a class="btn btn-outline" href="#contacto" data-i18n="p1_cta">Probar gratis</a>
+      </div>
+      <div class="plan plan-featured">
+        <span class="tag" data-i18n="p2_tag">Recomendado</span>
+        <h3 data-i18n="p2_t">P223 Vigía</h3>
+        <p class="plan-txt" data-i18n="p2_d">Servicio de auditoría local con<br>asesoramiento y revisión</p>
+        <div class="price"><span class="mono">$499</span><div class="price-note" data-i18n="p2_n">única vez por máquina</div></div>
+        <ul class="plan-list">
+          <li data-i18n="p2_l1">Veredicto del modelo local</li>
+          <li data-i18n="p2_l2">Reporte PDF premium</li>
+          <li data-i18n="p2_l3">Recomendaciones en español</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacto" data-i18n="p2_cta">Solicitar</a>
+      </div>
+      <div class="plan">
+        <h3 data-i18n="p3_t">P223 Guardia</h3>
+        <p class="plan-txt" data-i18n="p3_d">Agente/proxy en segundo plano<br>con alertas en tiempo real</p>
+        <div class="price"><span class="mono">Consultar</span><div class="price-note" data-i18n="p3_n">por licencia</div></div>
+        <ul class="plan-list">
+          <li data-i18n="p3_l1">Proxy interceptor continuo</li>
+          <li data-i18n="p3_l2">Alertas y monitoreo</li>
+        </ul>
+        <a class="btn btn-outline" href="#contacto" data-i18n="p3_cta">Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section contacto" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <p class="kicker" data-i18n="ct_k">Hablemos</p>
+        <h2 class="section-title" data-i18n="ct_t">Cierra la puerta a las fugas de IA</h2>
+        <p class="contact-d" data-i18n="ct_d">Déjanos un mensaje y volvemos contigo para agendar una auditoría
+        de tu entorno de IA local. Sin compromiso.</p>
+      </div>
+      <form class="contact-form" id="contactForm" action="#" method="post">
+        <label for="name" data-i18n="ctf_n">Nombre</label>
+        <input type="text" id="name" name="name" required data-i18n-placeholder="ctf_ph_n">
+        <label for="email" data-i18n="ctf_e">Email</label>
+        <input type="email" id="email" name="email" required placeholder="mail@empresa.com">
+        <label for="msg" data-i18n="ctf_m">Mensaje</label>
+        <textarea id="msg" name="msg" rows="4" required data-i18n-placeholder="ctf_ph_m"></textarea>
+        <button class="btn btn-primary" type="submit" data-i18n="ctf_s">Enviar mensaje</button>
+        <div class="form-note" id="formNote"></div>
+      </form>
+    </div>
+    <div class="donate">
+      <p class="donate-q" data-i18n="don_q">¿Este escaneo te ahorró una brecha? Invítanos un café ☕</p>
+      <a class="btn btn-ghost btn-coffee" href="#contacto" data-i18n="don_b">Comprar un café</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-badge">P223</span>
+      <span data-i18n="footer_line">Policía de IAs — por JZ Design Solutions</span>
+    </div>
+    <p class="footer-moto mono" data-i18n="footer_moto">El prudente ve el peligro y se protege.</p>
+    <a class="footer-link" href="https://jzds.me/" target="_blank" rel="noopener">jzds.me</a>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
