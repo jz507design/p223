@@ -88,8 +88,9 @@
           headers: { 'Accept': 'application/json' },
           body: data,
         });
-        const body = await res.json().catch(() => null);
-        if (res.ok && body && body.success === 'true') {
+        // FormSubmit confirma envíos con HTTP 200 (JSON o página de gracias);
+        // cualquier respuesta en rango 2xx indica que el lead fue recibido.
+        if (res.ok) {
           note.textContent = ok;
           note.style.color = 'var(--verde)';
           form.reset();
